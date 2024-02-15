@@ -314,7 +314,9 @@ export type Tables<
   PublicTableNameOrOptions extends
     | keyof (Database['public']['Tables'] & Database['public']['Views'])
     | { schema: keyof Database },
-  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+  TableName extends PublicTableNameOrOptions extends {
+    schema: keyof Database;
+  }
     ? keyof (Database[PublicTableNameOrOptions['schema']]['Tables'] &
         Database[PublicTableNameOrOptions['schema']]['Views'])
     : never = never,
@@ -339,7 +341,9 @@ export type TablesInsert<
   PublicTableNameOrOptions extends
     | keyof Database['public']['Tables']
     | { schema: keyof Database },
-  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+  TableName extends PublicTableNameOrOptions extends {
+    schema: keyof Database;
+  }
     ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
@@ -360,7 +364,9 @@ export type TablesUpdate<
   PublicTableNameOrOptions extends
     | keyof Database['public']['Tables']
     | { schema: keyof Database },
-  TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+  TableName extends PublicTableNameOrOptions extends {
+    schema: keyof Database;
+  }
     ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }

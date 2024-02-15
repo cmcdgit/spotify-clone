@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx"
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
