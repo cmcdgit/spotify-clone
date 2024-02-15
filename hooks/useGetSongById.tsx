@@ -18,7 +18,7 @@ const useGetSongById = (id?: string) => {
 
         const fetchSong = async () => {
             const { data, error } = await supabaseClient
-                .from('song')
+                .from('songs')
                 .select('*')
                 .eq('id', id)
                 .single();
