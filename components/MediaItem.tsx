@@ -1,32 +1,28 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import useLoadImage from "@/hooks/useLoadImage";
-import { Song } from "@/types";
+import Image from 'next/image';
+import useLoadImage from '@/hooks/useLoadImage';
+import { Song } from '@/types';
 
 interface MediaItemProps {
-    data: Song;
-    onClick?: (id: string) => void;
-
+  data: Song;
+  onClick?: (id: string) => void;
 }
 
-const MediaItem: React.FC<MediaItemProps> = ({
-    data,
-    onClick
-}) => {
-    const imageUrl = useLoadImage(data);
+const MediaItem: React.FC<MediaItemProps> = ({ data, onClick }) => {
+  const imageUrl = useLoadImage(data);
 
-    const handleClick = () => {
-        if (onClick) {
-            return onClick(data.id)
-        }
-
-        // todo: default turn on player when implemented
+  const handleClick = () => {
+    if (onClick) {
+      return onClick(data.id);
     }
-    return (
-        <div
-            onClick={handleClick}
-            className="
+
+    // todo: default turn on player when implemented
+  };
+  return (
+    <div
+      onClick={handleClick}
+      className="
                 flex
                 items-center
                 gap-x-3
@@ -37,52 +33,51 @@ const MediaItem: React.FC<MediaItemProps> = ({
                 rounded-md
 
             "
-        >
-            <div
-                className="
+    >
+      <div
+        className="
                     relative
                     rounded-md
                     min-h-[48px]
                     min-w-[48px]
                     overflow-hidden
                 "
-            >
-                <Image
-                    fill
-                    src={imageUrl || '/images/liked.png'}
-                    alt="Media Item"
-                    className="object-cover"
-                />
-            </div>
-            <div
-                className="
+      >
+        <Image
+          fill
+          src={imageUrl || '/images/liked.png'}
+          alt="Media Item"
+          className="object-cover"
+        />
+      </div>
+      <div
+        className="
                      flex
                      flex-col
                      gap-y-1
                      overflow-hidden   
-                ">
-                <p
-                    className="
+                "
+      >
+        <p
+          className="
                         text-white 
                         truncate
                         "
-                >
-                    {data.title}
-                </p>
-                <p
-                    className="
+        >
+          {data.title}
+        </p>
+        <p
+          className="
                         text-neutral-400
                         text-sm
                         truncate
                     "
-                >
-                    {data.author}
-                </p>
+        >
+          {data.author}
+        </p>
+      </div>
+    </div>
+  );
+};
 
-            </div>
-
-        </div>
-    )
-}
-
-export default MediaItem
+export default MediaItem;
