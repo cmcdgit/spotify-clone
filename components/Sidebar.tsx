@@ -72,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
 
                         "
           >
-            {routes.map((item) => (
+            {routes.map(item => (
               <SidebarItem key={item.label} {...item} />
             ))}
           </div>

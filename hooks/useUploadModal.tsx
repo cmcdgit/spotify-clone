@@ -6,7 +6,7 @@ interface UploadModalStore {
   onClose: () => void;
 }
 
-const useUploadModal = create<UploadModalStore>((set) => ({
+const useUploadModal = create<UploadModalStore>(set => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),

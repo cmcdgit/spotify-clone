@@ -28,7 +28,7 @@ const PageContent: React.FC<PageContentProps> = ({ songs }) => {
                 mt-4
             "
     >
-      {songs.map((item) => (
+      {songs.map(item => (
         <SongItem
           key={item.id}
           onClick={(id: string) => onPlay(id)}
