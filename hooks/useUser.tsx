@@ -49,7 +49,7 @@ export const MyUserContextProvider = (props: Props) => {
       setIsLoadingData(true);
 
       Promise.allSettled([getUserDetails(), getSubscription()]).then(
-        (results) => {
+        results => {
           const userDetailsPromise = results[0];
           const subscriptionPromise = results[1];
 

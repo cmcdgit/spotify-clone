@@ -34,7 +34,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
       return;
     }
 
-    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    const currentIndex = player.ids.findIndex(id => id === player.activeId);
     const nextSong = player.ids[currentIndex + 1];
 
     if (!nextSong) {
@@ -48,7 +48,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
     if (player.ids.length === 0) {
       return;
     }
-    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    const currentIndex = player.ids.findIndex(id => id === player.activeId);
     const previousSong = player.ids[currentIndex - 1];
 
     if (!previousSong) {
@@ -201,7 +201,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
             className="cursor-pointer"
             size={34}
           />
-          <Slider value={volume} onChange={(value) => setVolume(value)} />
+          <Slider value={volume} onChange={value => setVolume(value)} />
         </div>
       </div>
     </div>

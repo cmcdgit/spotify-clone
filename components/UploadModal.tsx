@@ -37,7 +37,7 @@ const UploadModal = () => {
     }
   };
 
-  const onSubmit: SubmitHandler<FieldValues> = async (values) => {
+  const onSubmit: SubmitHandler<FieldValues> = async values => {
     try {
       setIsLoading(true);
 

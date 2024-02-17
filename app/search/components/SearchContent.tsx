@@ -38,7 +38,7 @@ const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
                 px-6
             "
     >
-      {songs.map((song) => (
+      {songs.map(song => (
         <div
           key={song.id}
           className="
